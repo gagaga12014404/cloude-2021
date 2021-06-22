@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&family=Pattaya&display=swap"
+        rel="stylesheet">
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        body{
+            background: linear-gradient(20deg,#c9d7ff,#b0c9eb)
+            fixed center center / 100% 100%;
+        }
+        .header {
+            width: 100%;
+            background-color: rgb(56, 117, 175);
+        }
+
+        .header .container{
+            
+            display: flex;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .header .main-nav{
+            
+            display: flex;
+            margin: auto;
+        }
+        .header .main-nav a{
+            font-weight: bold;
+            text-decoration: none;
+            color: aliceblue;
+            padding: 5px 2em;
+            
+            position: relative;
+        }
+        /*字底下有線*/
+        .header .main-nav a::after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            bottom: -5px;
+            border-bottom: 1px solid #fff;
+            transition: .3s;
+        }
+        .header .main-nav a:hover::after{
+            left: 0;
+            right: 0;
+            
+        }
+
+        .header .header-search{
+            display: flex;
+        }
+        .header .header-search button,
+        .header .header-search input{
+            border: none;
+            background-color: aliceblue;
+            padding: 5px 10px;
+        }
+        /*點下去沒有框框*/
+        .header .header-search button:focus,
+        .header .header-search input:focus{
+            outline: none;
+        }
+
+        .header .header-search button{
+            border-radius: 0 200px 200px 0;
+        }
+        .header .header-search input{
+            border-radius: 200px 0 0 200px;
+        }
+        .wrapper{
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+        }
+        .pic{
+            width: 100%;
+        }
+        .banner{
+            width: 100%;
+            height: 80vh;
+            background:
+                linear-gradient(115deg, rgb(94, 140, 187) 50%,transparent 10%) center center / 100% 100%,
+                url('./pic/main.jpg') right center / auto 100%;
+        }
+        .banner .container{
+            width: 1200px;
+            height: 100%;
+            margin: auto;
+        }
+        .banner .banner-txt{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .banner .banner-txt h1{
+            font-size: 80px;
+            border-bottom: 1px solid #333;
+        }
+        .banner .banner-txt h1 small{
+            display: block;
+            font-size: 53px;
+        }
+        .banner .banner-txt h2{
+            font-size: 50px;
+        }
+        .banner .banner-txt h3{
+            font-size: 30px;
+        }
+        .wrap{
+            width: 1200px;
+            margin: auto;
+            margin-top: 100px;
+            
+        }
+        .wrap form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+        }
+        .wrap h2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+        }
+        .wrap .pic{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            margin: 10px;
+        }
+        footer{
+            background-color: #333;
+            height: 50px;
+        }
+        footer h6{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:#fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="#">Home</a>
+                <a href="#">Keras</a>
+                <a href="#">XGBoost</a>
+            </nav>
+            <form class="header-search">
+                <input type="search">
+                <button>搜尋</button>
+            </form>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="container">
+            <div class="banner-txt">
+                <h1>
+                    雲端應用實務
+                    <!-- <small>
+                        期末報告
+                    </small> -->
+                </h1>
+                <h2>作者：</h2>
+                <h3>106590029 劉聿彤</h3>
+            </div>
+        </div>
+    </div>
+    <h1 style="margin-top: 150px;display: flex;
+    justify-content: center; 
+    align-items: center; ">
+        即時更新並且預測未來股價走勢
+    </h1>
+    <div class="wrap">
+        <form class="header-search">
+            <h2>請輸入股票代碼：</h2>
+            <input type="search" value="2330" >
+            <button>搜尋</button>
+        </form>
+        <!-- item1 -->
+        <h2>近50天預測結果</h2>
+        
+        <div class="pic">
+            <img src="./pic/plot.png" alt="pic" width="60%">
+        </div>
+        <h2>未來30天預測結果</h2>
+        <div class="pic">
+            <img src="./pic/future.png" alt="pic" width="60%">
+        </div>
+        <h2>是否推薦購買：不推薦</h2>    
+            
+    </div>
+    <footer>
+        <h6>Liu copyright</h6>
+    </footer>
+</body>
+
+</html>
